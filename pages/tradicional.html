@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>MathInk - Tradicional</title>
+<link rel="stylesheet" href="tradicional.css">
+</head>
+
+<body>
+    <div class="container">
+
+
+
+<h1>🧮 Calculadora Tradicional</h1>
+
+<input
+type="text"
+id="expressao"
+placeholder="Digite sua expressão matemática..."
+>
+
+<br><br>
+
+<button onclick="calcular()">
+    Resolver
+</button>
+
+<h2 id="resultado"></h2>
+
+<script>
+
+function calcular(){
+
+    let expressao =
+    document.getElementById("expressao").value;
+
+    try{
+
+        let resultado = eval(expressao);
+
+      document.getElementById("resultado").innerHTML = `
+<div class="resultado-titulo">
+✓ Resultado
+</div>
+
+<div class="resultado-valor">
+${resultado}
+</div>
+`;
+    }
+
+    catch{
+
+        document.getElementById("resultado")
+        .innerText =
+        "Expressão inválida";
+
+    }
+
+}
+
+</script>
+
+<div class="ajuda">
+
+    <h3>💡 Como usar</h3>
+
+    <p><strong>+</strong> Soma</p>
+    <p><strong>-</strong> Subtração</p>
+    <p><strong>*</strong> Multiplicação</p>
+    <p><strong>/</strong> Divisão</p>
+
+</div>
+
+<div class="voltar">
+
+    <button onclick="window.location.href='../index.html'">
+        ← Voltar
+    </button>
+
+</div>
+
+</div>
+</body>
+</html>

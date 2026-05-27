@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<title>MathInk - Científica</title>
+
+<link rel="stylesheet" href="cientifica.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🔬 Calculadora Científica</h1>
+
+    <input
+        type="text"
+        id="expressao"
+        placeholder="Digite sua expressão matemática..."
+    >
+
+    <br><br>
+
+    <button onclick="calcular()">
+        Resolver
+    </button>
+
+    <h2 id="resultado"></h2>
+
+    <div class="ajuda">
+
+        <h3>💡 Funções disponíveis</h3>
+
+        <p>sqrt(x) → raiz quadrada</p>
+        <p>sin(x) → seno</p>
+        <p>cos(x) → cosseno</p>
+        <p>tan(x) → tangente</p>
+        <p>log(x) → logaritmo</p>
+        <p>PI com */+- → π</p>
+
+    </div>
+
+<div class="voltar">
+
+    <button onclick="window.location.href='../index.html'">
+        ← Voltar
+    </button>
+
+
+
+</div>
+
+<script>
+
+function calcular(){
+
+    let expr = document.getElementById("expressao").value;
+
+    try{
+
+        expr = expr
+            .replaceAll("PI", "Math.PI")
+            .replaceAll("sqrt", "Math.sqrt")
+            .replace(/sin\(([^)]+)\)/g, "Math.sin(($1)*Math.PI/180)")
+            .replace(/cos\(([^)]+)\)/g, "Math.cos(($1)*Math.PI/180)")
+            .replace(/tan\(([^)]+)\)/g, "Math.tan(($1)*Math.PI/180)")
+            .replaceAll("log", "Math.log10");
+
+        let resultado = eval(expr);
+
+        document.getElementById("resultado").innerHTML = `
+            <div class="resultado-titulo">✓ Resultado</div>
+            <div class="resultado-valor">${resultado}</div>
+        `;
+
+    } catch {
+
+        document.getElementById("resultado").innerText =
+        "Expressão inválida";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

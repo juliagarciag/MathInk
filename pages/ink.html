@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>MathInk - Ink Mode</title>
+<link rel="stylesheet" href="ink.css">
+</head>
+
+<body>
+
+<header class="header">
+    <h1>🎨 MathInk - <span>Ink Mode</span></h1>
+
+    <button onclick="window.location.href='../index.html'">
+        ← Voltar
+    </button>
+</header>
+
+<main class="ink-area">
+
+    <aside class="toolbar">
+
+        <button onclick="modoCaneta()">✒️ Caneta</button>
+        <button onclick="modoBorracha()">🧽 Borracha</button>
+        <button onclick="limparCanvas()">🧹 Limpar</button>
+
+        <div class="controle">
+            <p>💜 Tamanho do traço</p>
+
+            <input
+            type="range"
+            min="2"
+            max="20"
+            value="4"
+            id="tamanho"
+            >
+
+            <div class="valores">
+                <span>2px</span>
+                <span>20px</span>
+            </div>
+        </div>
+
+    </aside>
+
+    <canvas id="canvas" width="1000" height="620"></canvas>
+
+<div class="acoes">
+
+    <button class="botao-ia" onclick="resolverConta()">
+        🤖 Resolver com IA
+    </button>
+
+<button class="btn-limpar-ia" onclick="limparRespostaIA()">
+    🗑️ Limpar resposta
+</button>
+
+</div>
+
+<div id="respostaIA"></div>
+
+</main>
+
+<script src="ink.js"></script>
+</body>
+</html>
