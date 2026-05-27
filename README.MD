@@ -1,4 +1,6 @@
-<h1 align="center">🧮 MathInk</h1>
+<p align="center">
+  <img src="assets/logo transparente calc.png" width="180">
+</p>
 
 <p align="center">
   Calculadora futurista com inteligência artificial e reconhecimento de escrita.
