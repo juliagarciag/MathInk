@@ -71,6 +71,7 @@ O visual do projeto utiliza:
 - Node.js
 - Express
 - Gemini API
+- FIGMA 
 
 
 
